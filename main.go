@@ -37,6 +37,14 @@ func main() {
 	var useClipboard = flag.Bool("b", false, `Copy to clipboard after uploading it`)
 	flag.Parse()
 
+	if len(*titleFlag) == 0 {
+		*titleFlag = string(cfg.DefaultTitle)
+	}
+
+	if len(*descriptionFlag) == 0 {
+		*descriptionFlag = string(cfg.DefaultDescription)
+	}
+
 	titleCommand := config.StringCommand(*titleFlag)
 	descriptionCommand := config.StringCommand(*descriptionFlag)
 	visibility := utils.VisibilityFromString(*visibilityFlag)
