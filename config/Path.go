@@ -2,6 +2,7 @@ package config
 
 import (
 	"fmt"
+	"github.com/scinna/CLIent/utils"
 	"os"
 	"os/user"
 	"path/filepath"
@@ -40,9 +41,9 @@ func getConfigFile() string {
 
 func createDefaultConfiguration() error {
 	cfg := Config{
-		DefaultTitle: StringCommand("${date \"+%Y-%m-%d %H:%M:%S\"}"),
+		DefaultTitle:       StringCommand("${date \"+%Y-%m-%d %H:%M:%S\"}"),
 		DefaultDescription: "",
-		DefaultVisibility:  VisibilityFromString("UNLISTED"),
+		DefaultVisibility:  utils.VisibilityFromString("UNLISTED"),
 	}
 
 	return WriteConfiguration(&cfg)

@@ -2,9 +2,12 @@ package config
 
 import (
 	"encoding/json"
+	"github.com/scinna/CLIent/utils"
 	"io/ioutil"
 	"os"
 )
+
+var CopyToClipboard = false
 
 type Config struct {
 	ServerURL string
@@ -13,7 +16,7 @@ type Config struct {
 
 	DefaultTitle       StringCommand
 	DefaultDescription StringCommand
-	DefaultVisibility  Visibility
+	DefaultVisibility  utils.Visibility
 	DefaultCollection  string
 }
 

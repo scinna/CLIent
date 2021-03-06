@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"github.com/scinna/CLIent/api"
+	"github.com/scinna/CLIent/utils"
 	"os"
 	"regexp"
 	"strings"
@@ -55,7 +56,7 @@ func Setup(cfg *Config) {
 	accepted := false
 	for !accepted {
 		fmt.Print("Visibility (Public, Unlisted, Private) ? ")
-		value := VisibilityFromString(readInput())
+		value := utils.VisibilityFromString(readInput())
 
 		accepted = value.IsValid()
 		if !accepted {
